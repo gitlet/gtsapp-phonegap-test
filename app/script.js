@@ -21,15 +21,20 @@
 //     });
 // };
 
+// alert('hi')
 var sql = require('mssql');
 
 sql.connect("mssql://devuser:Admin@123@192.168.1.5:56617/Test").then(function() {
     // Query
 
-    new sql.Request().query('select * from VehicleDetails').then(function (recordset) {
-        console.dir(recordset);
-    }).catch(function (err) {
-        // ... query error checks
-        console.log(err);
-    });
+    new sql.Request().query('select * from VehicleDetails')
+        .then(
+            function (recordset) {
+                console.log(recordset);
+            }).catch(function (err) {
+                // ... query error checks
+                console.log(err);
+            });
 });
+
+// Test();
